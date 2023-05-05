@@ -18,4 +18,13 @@ module.exports = {
       next(error);
     }
   },
+  getUserById: async (req, res, next) => {
+    try {
+      const user = await User.find({ _id: req.params.id });
+      res.status(200).send(user);
+    } catch (error) {
+      next(error);
+    }
+  },
 }
+
