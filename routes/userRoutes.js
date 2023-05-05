@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const users = require('../controllers/users');
 
-router.post('/users', (req, res) => {
-  console.log("in user post router");
-});
+router.post('/users', users.postUser);
 
 router.get('/users', (req, res) => {
   console.log("in user get router");
