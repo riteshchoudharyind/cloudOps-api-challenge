@@ -9,5 +9,13 @@ module.exports = {
     } catch (error) {
       next(error);
     }
-  }
+  },
+  getUsers: async (req, res, next) => {
+    try {
+      const users = await User.find();
+      res.status(200).send(users);
+    } catch (error) {
+      next(error);
+    }
+  },
 }

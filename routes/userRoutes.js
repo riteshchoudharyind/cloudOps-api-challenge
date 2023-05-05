@@ -4,9 +4,7 @@ const users = require('../controllers/users');
 
 router.post('/users', users.postUser);
 
-router.get('/users', (req, res) => {
-  console.log("in user get router");
-});
+router.get('/users', users.getUsers);
 
 router.get('/users/:id', (req, res) => {
   console.log("in user get router with id");
